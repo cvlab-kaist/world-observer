@@ -1,10 +1,16 @@
-# World Observer — project page
+# world-observer
 
-Static site served by GitHub Pages at https://cvlab-kaist.github.io/world-observer/
-(Settings → Pages → Deploy from branch `main`, folder `/ (root)`).
+This is the official repository for the paper **"World Observer: Joint Actor-Observer Generation for Persistent World Modeling"**.
 
-Layout adapted from the Seoul World Model project page.
+[[Project Page]](https://cvlab-kaist.github.io/world-observer/)
 
-- `index.html`, `style.css`
-- `assets/` figures (`wo_*.jpg`, rendered from the paper PDFs) and favicon
-- `video/` expected clips: `teaser.mp4` (hero), `evolve.mp4`, `control.mp4`, `place.mp4`, `multi.mp4`
+## Release Plan
+
+We are currently undergoing internal review and code cleanup, and plan to release the following soon:
+
+- World Observer training dataset
+- Model checkpoint and inference code
+- Training code
+
+
+Stay tuned for updates!
