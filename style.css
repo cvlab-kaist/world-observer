@@ -12,22 +12,23 @@
     --caption-font-size: 1rem;
 
     /* Colors - Brand */
-    --color-primary: #1d4ed8;
-    --color-primary-light: #2563eb;
-    --color-primary-dark: #1e40af;
+    --color-primary: #44403c;
+    --color-primary-light: #78716c;
+    --color-primary-dark: #1c1917;
 
-    /* Colors - Grayscale */
+    /* Colors - Grayscale (warm stone greys) */
+    --color-ink: #0c0a09;
     --color-bg: #ffffff;
-    --color-bg-alt: #f5f8ff;
-    --color-text-main: #1e293b;
+    --color-bg-alt: #f7f7f5;
+    --color-text-main: #292524;
     /* Slate 800 */
-    --color-text-muted: #64748b;
+    --color-text-muted: #78716c;
     /* Slate 500 */
-    --color-text-light: #94a3b8;
+    --color-text-light: #a8a29e;
     /* Slate 400 */
-    --color-border: #e2e8f0;
+    --color-border: #e7e5e4;
     /* Slate 200 */
-    --color-border-light: #f1f5f9;
+    --color-border-light: #f5f5f4;
     /* Slate 100 */
 
     /* Layout */
@@ -362,9 +363,9 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
     color: var(--color-text-muted);
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 .hero-notes {
@@ -742,3 +743,554 @@ video.lazy-video.loaded {
         flex: 0 0 300px;
     }
 }
+
+/* Hero reel (Atlas-style player) */
+.reel-wrap {
+    max-width: 88rem;
+    margin: 0 auto 2rem auto;
+}
+
+.reel {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #0c0d10;
+}
+
+.reel video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    min-height: 0;
+}
+
+.reel-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 2rem 1rem 0.75rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.reel:hover .reel-bar,
+.reel-bar:focus-within {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .reel-bar { opacity: 1; }
+}
+
+.reel-btn {
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
+    border: 0;
+    padding: 0;
+    background: none;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    border-radius: 999px;
+}
+
+.reel-btn:hover { color: #fff; }
+.reel-btn svg { width: 1.125rem; height: 1.125rem; }
+
+.reel-btn:focus-visible,
+.reel-seek:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.reel-seek {
+    flex: 1;
+    min-width: 0;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.reel-track {
+    position: relative;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+}
+
+.reel-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background: #fff;
+}
+
+.reel-time {
+    flex: none;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reel-bar { transition: none; }
+}
+
+/* Training-data example rows: actor | observer(s), equal heights */
+.pair-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.25rem 0 0.25rem;
+}
+
+.pair-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pair-row > .clip,
+.pair-row > .clip-col {
+    flex: var(--ar) 1 0;
+    min-width: 0;
+}
+
+.clip-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.clip {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #0c0d10;
+}
+
+.clip video {
+    display: block;
+    width: 100%;
+    aspect-ratio: var(--ar);
+    max-width: 100%;
+    object-fit: cover;
+    min-height: 0;
+}
+
+.clip-label {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 0.3rem;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+    .pair-row { flex-direction: column; }
+}
+
+.pair-list { gap: 1.25rem; margin-top: 1.75rem; }
+
+.pair-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.pair-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Model overview key points */
+.model-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.model-points li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Comparison */
+.cmp-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0 1rem;
+}
+
+.cmp-tab {
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.cmp-tab:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.cmp-tab.active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.cmp-tab:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+.cmp-panel { display: none; }
+.cmp-panel.active { display: block; }
+
+.cmp-caption {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.cmp-top {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cmp-top.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cmp-top.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.cmp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.clip.contain video { object-fit: contain; }
+
+.clip.is-ours { box-shadow: 0 0 0 2px var(--color-primary); }
+.clip.is-ours .clip-label { background: var(--color-primary); }
+
+@media (max-width: 768px) {
+    .cmp-top.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cmp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Ablation */
+.abl-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.abl-grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.abl-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.abl-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.prompt-box {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin: 0 0 1.25rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-bg-alt);
+}
+.prompt-label {
+    flex: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+.prompt-text { margin: 0; font-style: italic; color: var(--color-text-main); }
+.prompt-text strong { font-weight: 700; color: var(--color-ink); }
+@media (max-width: 640px) {
+    .prompt-box { flex-direction: column; gap: 0.25rem; }
+}
+
+.abl-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.abl-head {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+}
+
+.abl-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.45rem;
+    border-radius: 0.3rem;
+    background: var(--color-border-light);
+    color: var(--color-text-muted);
+}
+
+.abl-tag.ours { background: var(--color-primary); color: #fff; }
+.abl-card.is-ours .abl-head b { color: var(--color-primary); }
+
+.abl-streams {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.abl-card figcaption {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+}
+
+.clip-empty {
+    aspect-ratio: var(--ar);
+    border-radius: 0.5rem;
+    border: 1px dashed var(--color-border);
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+@media (max-width: 1024px) {
+    .abl-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+    .abl-grid.cols-4,
+    .abl-grid.cols-3,
+    .abl-grid.cols-2 { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Compact data examples: three columns, actor above its observer(s) */
+.pair-list.compact {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+    align-items: start;
+}
+
+.pair-list.compact .pair-row {
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.pair-list.compact .pair-row > .clip {
+    flex: none;
+}
+
+.pair-list.compact .clip-label {
+    font-size: 0.65rem;
+    left: 0.35rem;
+    top: 0.35rem;
+}
+
+.clip-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+}
+
+@media (max-width: 768px) {
+    .pair-list.compact { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Multi-Observer: observers stacked at full column width */
+.pair-list.compact .clip-pair {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.cmp-tabs { align-items: center; }
+
+.cmp-dots {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: auto;
+}
+
+.cmp-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-border);
+    cursor: pointer;
+}
+
+.cmp-dot.active { background: var(--color-primary); }
+.cmp-dot:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+.cmp-caption { font-style: italic; }
+
+.cmp-dot.synth + .cmp-dot.synth,
+.cmp-dot:not(.synth) + .cmp-dot:not(.synth) { margin-left: 0; }
+.cmp-dot:not(.synth) + .cmp-dot.synth { margin-left: 0.5rem; }
+
+
+/* =========================================================
+   World Observer theme: indigo accent on warm stone greys
+   (overrides the inherited SWM styles above)
+   ========================================================= */
+h1, h2, h3, h4 { color: var(--color-ink); }
+
+.section-title {
+    color: var(--color-ink);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 1.25rem;
+}
+
+.subsection-title { color: var(--color-ink); letter-spacing: -0.015em; }
+
+.hero-title { color: var(--color-ink); letter-spacing: -0.03em; }
+.hero-title .gradient-text { background: none; -webkit-text-fill-color: var(--color-primary); color: var(--color-primary); }
+
+.hero-authors span,
+.hero-authors a { color: var(--color-text-main); }
+.hero-authors a { text-decoration: underline; text-decoration-color: var(--color-border); text-underline-offset: 3px; }
+.hero-authors a:hover { color: var(--color-primary); text-decoration-color: currentColor; }
+
+.hero-venue { color: var(--color-text-muted); }
+
+.btn { background-color: var(--color-ink); }
+.btn:hover { background-color: #292524; }
+.btn.btn-outline { border-color: var(--color-border); background-color: var(--color-bg); }
+
+.tldr-box {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-alt);
+    border-radius: 1rem;
+}
+
+.tldr-label { background-color: var(--color-ink); font-size: 0.95rem; letter-spacing: 0.04em; }
+
+/* Sidebar: quiet table of contents, short rule marks the current section */
+.sidebar { gap: 0.7rem; left: 2.25rem; }
+.sidebar::before,
+.sidebar::after { display: none; }
+.sidebar-item { gap: 0.7rem; }
+.sidebar-dot {
+    width: 12px;
+    height: 1px;
+    border: 0;
+    border-radius: 0;
+    background-color: var(--color-text-light);
+    transform: none;
+}
+.sidebar-label { font-size: 0.8rem; font-weight: 500; color: var(--color-text-light); letter-spacing: 0.01em; }
+.sidebar-item:hover .sidebar-dot { background-color: var(--color-text-muted); transform: none; width: 18px; }
+.sidebar-item:hover .sidebar-label { color: var(--color-text-muted); font-weight: 500; }
+.sidebar-item.active .sidebar-dot { background-color: var(--color-ink); transform: none; width: 24px; }
+.sidebar-item.active .sidebar-label { color: var(--color-ink); font-weight: 600; }
+.sidebar-item:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; border-radius: 2px; }
+
+@media (max-width: 1280px) {
+    .sidebar { gap: 0.25rem; background-color: rgba(255, 255, 255, 0.92); }
+    .sidebar-label { font-size: 0.85rem; }
+}
+
+/* Comparison tabs and dots in ink; accent stays reserved for "Ours" */
+.cmp-tab:hover { color: var(--color-ink); border-color: var(--color-text-light); }
+.cmp-tab.active { background: var(--color-ink); border-color: var(--color-ink); color: #fff; }
+.cmp-dot.active { background: var(--color-ink); }
+
+.pair-title { color: var(--color-ink); }
+
+
+/* Monochrome title: graphite fading into stone */
+.hero-title .gradient-text {
+    background: linear-gradient(100deg, var(--color-ink) 0%, #57534e 55%, #a8a29e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.tldr-highlight { color: var(--color-ink); }
+
+.hero-authors { font-size: 1.1rem; column-gap: 1.25rem; }
+
+/* Observer eye above the title: a camera-lens iris with a recording light */
+.hero-eye {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+}
+
+.hero-eye svg { width: 5.25rem; height: auto; overflow: visible; }
+.eye-shape { fill: var(--color-bg); }
+.eye-iris { fill: var(--color-ink); }
+.eye-lens-ring { fill: none; stroke: var(--color-text-muted); stroke-width: 0.8; }
+.eye-blades { fill: var(--color-text-muted); }
+.eye-pupil { fill: var(--color-ink); }
+.eye-glint { fill: #ffffff; opacity: 0.9; }
+.eye-outline { fill: none; stroke: var(--color-ink); stroke-width: 2.6; stroke-linejoin: round; }
+.eye-rec { fill: #b91c1c; animation: eye-rec 1.4s steps(1) infinite; }
+
+.eye-lid {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: eye-blink 4.2s ease-in-out infinite;
+}
+
+.eye-blades {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: eye-aperture 7s ease-in-out infinite;
+}
+
+@keyframes eye-blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    94% { transform: scaleY(0.08); }
+    97% { transform: scaleY(1); }
+}
+
+@keyframes eye-aperture {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(28deg) scale(0.82); }
+}
+
+@keyframes eye-rec {
+    0%, 60% { opacity: 1; }
+    61%, 100% { opacity: 0.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .eye-lid, .eye-blades, .eye-rec { animation: none; }
+}
+
+.author-break { flex-basis: 100%; height: 0; }

@@ -32,14 +32,136 @@
 
 <body>
 
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="#tldr" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">TL;DR</span>
+        </a>
+        <a href="#demo-trajectory" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Evolve World State</span>
+        </a>
+        <a href="#demo-text" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Place Observer</span>
+        </a>
+        <a href="#demo-rag" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Multiple Observers</span>
+        </a>
+        <a href="#demo-navigation" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Control World State</span>
+        </a>
+        <a href="#data-overview" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Data</span>
+        </a>
+        <a href="#model-overview" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Model</span>
+        </a>
+        <a href="#comparison" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Comparison</span>
+        </a>
+        <a href="#ablation" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Ablation</span>
+        </a>
+        <a href="#abstract" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Abstract</span>
+        </a>
+        <a href="#citation" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Citation</span>
+        </a>
+    </div>
+
     <!-- Hero Section -->
     <section id="tldr" class="hero-section">
         <div class="hero-container">
+            <div class="hero-eye" aria-hidden="true">
+                <svg viewBox="0 0 96 56" width="96" height="56">
+                    <defs>
+                        <clipPath id="eye-clip"><path d="M6 28 Q48 -4 90 28 Q48 60 6 28 Z"/></clipPath>
+                    </defs>
+                    <g class="eye-lid">
+                        <path class="eye-shape" d="M6 28 Q48 -4 90 28 Q48 60 6 28 Z"/>
+                        <g clip-path="url(#eye-clip)">
+                            <circle class="eye-iris" cx="48" cy="28" r="16"/>
+                            <circle class="eye-lens-ring" cx="48" cy="28" r="13"/>
+                            <g class="eye-blades">
+                                <path d="M48 17 L56 22 L48 28 Z"/><path d="M57.5 22.5 L57.5 32 L48 28 Z"/><path d="M56 34 L48 39 L48 28 Z"/>
+                                <path d="M48 39 L39 34 L48 28 Z"/><path d="M38.5 33 L38.5 23 L48 28 Z"/><path d="M40 22 L48 17 L48 28 Z"/>
+                            </g>
+                            <circle class="eye-pupil" cx="48" cy="28" r="4"/>
+                            <circle class="eye-glint" cx="52.5" cy="23" r="2"/>
+                        </g>
+                        <path class="eye-outline" d="M6 28 Q48 -4 90 28 Q48 60 6 28 Z"/>
+                    </g>
+                    <circle class="eye-rec" cx="90" cy="6" r="3.2"/>
+                </svg>
+            </div>
             <h1 class="hero-title">
                 <span class="gradient-text">World Observer</span>:<br>
                 <span class="hero-subtitle">Joint Actor-Observer Generation<br> for Persistent World Modeling</span>
             </h1>
 
+            <!-- Authors -->
+            <div class="hero-authors">
+                <span><a href="https://eenrue.github.io/" target="_blank" rel="noopener noreferrer">Hyunwook Choi</a></span>
+                <span><a href="https://dhyun22.github.io/" target="_blank" rel="noopener noreferrer">Dahyun Chung</a></span>
+                <span><a href="https://scholar.google.com/citations?hl=ko&amp;user=8wSdx3UAAAAJ" target="_blank" rel="noopener noreferrer">Hyunsung Kim</a></span>
+                <span><a href="https://jinsy515.github.io/my-page/" target="_blank" rel="noopener noreferrer">Siyoon Jin</a></span>
+                <i class="author-break" aria-hidden="true"></i>
+                <span><a href="https://wlsguur.github.io/" target="_blank" rel="noopener noreferrer">Jinhyeok Choi</a></span>
+                <span><a href="https://j0seo.github.io/" target="_blank" rel="noopener noreferrer">Junyoung Seo</a></span>
+                <span><a href="https://cvlab.kaist.ac.kr" target="_blank" rel="noopener noreferrer">Seungryong Kim</a></span>
+            </div>
+
+            <div class="hero-affiliations">
+                <span>KAIST AI</span>
+            </div>
+
+            <!-- Venue -->
+            <div class="hero-venue"><span class="hero-venue-main">arXiv preprint</span></div>
+
+            <!-- Link Buttons -->
+            <div class="hero-buttons">
+                <!-- Paper button hidden until the arXiv release
+                <a href="world_observer.pdf" class="btn" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-book"></i> Paper
+                </a>
+                -->
+                <a href="https://github.com/cvlab-kaist/world-observer" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> Code
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Teaser Video -->
+        <div class="teaser-container">
+            <div class="reel-wrap">
+                <div class="reel" id="reel">
+                    <video class="hero-video" id="reel-video" src="video/teaser.mp4" poster="assets/teaser_poster.jpg"
+                        autoplay loop muted playsinline disablepictureinpicture
+                        aria-label="World Observer results: evolving, controlling and tracking world state beyond the actor's view"></video>
+                    <div class="reel-bar">
+                        <button class="reel-btn" id="reel-play" type="button" aria-label="Pause">
+                            <svg id="reel-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                        </button>
+                        <div class="reel-seek" id="reel-seek" role="slider" tabindex="0" aria-label="Seek"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div class="reel-track"><div class="reel-fill" id="reel-fill"></div></div>
+                        </div>
+                        <span class="reel-time" id="reel-time">0:00</span>
+                    </div>
+                </div>
+                <span class="video-caption">AI-Generated Video by WorldObserver</span>
+            </div>
         </div>
 
         <!-- TL;DR Box -->
@@ -51,10 +173,501 @@
                         How can a world model continuously observe regions beyond the actor&rsquo;s current view?
                         <span class="tldr-highlight">World Observer jointly generates an actor view with
                         panoramic observers</span> that keep unseen regions observable.
-                        World Observer preserves their evolving states, enables control over how unseen regions evolve,
-                        and brings their updated states back consistently when they re-enter the actor&rsquo;s view.
+                        Placing observers where we want, it evolves and controls the actor&rsquo;s unseen regions.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo: Multi-Kilometer Trajectory -->
+    <section id="demo-trajectory" class="section">
+        <div class="container">
+            <h2 class="section-title">Evolve World State Beyond the Actor&rsquo;s View</h2>
+            <p>
+                By <strong>jointly generating panoramic observer</strong>, World Observer continuously tracks and updates
+                regions beyond the Actor&rsquo;s current view.
+            </p>
+            <div class="video-container">
+                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/evolve.mp4" poster="assets/evolve_poster.jpg">
+                </video>
+                <span class="video-caption">AI-Generated Video by WorldObserver</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo: Text Control -->
+    <section id="demo-text" class="section">
+        <div class="container">
+            <h2 class="section-title">Place Observer Freely</h2>
+            <p>
+                Observers are not tied to the actor. We can <strong>choose which regions to observe independently</strong>
+                of the actor&rsquo;s position.
+            </p>
+            <div class="video-container">
+                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/place.mp4" poster="assets/place_poster.jpg">
+                </video>
+                <span class="video-caption">AI-Generated Video by WorldObserver</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo: World Model RAG -->
+    <section id="demo-rag" class="section">
+        <div class="container">
+            <h2 class="section-title">Place Multiple Observers</h2>
+            <p>
+                We can <strong>place multiple Observers where we want</strong>, and track what we cannot see from the
+                single Actor/Observer.
+            </p>
+            <div class="video-container">
+                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/multi.mp4" poster="assets/multi_poster.jpg">
+                </video>
+                <span class="video-caption">AI-Generated Video by WorldObserver</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo: Free Navigation -->
+    <section id="demo-navigation" class="section">
+        <div class="container">
+            <h2 class="section-title">Control World State Beyond the Actor&rsquo;s View</h2>
+            <p>
+                Decoupling the observer from the actor also enables <strong>independent observer control</strong>,
+                allowing us to control beyond the Actor&rsquo;s current view.
+            </p>
+            <div class="video-container">
+                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/control.mp4" poster="assets/control_poster.jpg">
+                </video>
+                <span class="video-caption">AI-Generated Video by WorldObserver</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Overview -->
+    <section id="data-overview" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Data Overview</h2>
+            <p>
+                World Observer is trained on synchronized actor and observer videos covering
+                <strong>diverse observer configurations</strong>. Real panoramic videos provide observers that move with
+                the actor, while <strong>CARLA-rendered synthetic data</strong> adds observers placed independently of
+                the actor and multiple observers at once.
+            </p>
+            <div class="pair-list compact">
+                <div class="pair-item">
+                    <span class="pair-title">Moving Observer</span>
+                    <div class="pair-row sync-group">
+                        <div class="clip" style="--ar:1.818">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/real_ofuku_actor.mp4"></video>
+                            <span class="clip-label">Actor</span>
+                        </div>
+                        <div class="clip" style="--ar:2">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/real_ofuku_observer.mp4"></video>
+                            <span class="clip-label">Observer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pair-item">
+                    <span class="pair-title">Flexible Observer</span>
+                    <div class="pair-row sync-group">
+                        <div class="clip" style="--ar:1.818">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/synth_town01_actor.mp4"></video>
+                            <span class="clip-label">Actor</span>
+                        </div>
+                        <div class="clip" style="--ar:2">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/synth_town01_observer2.mp4"></video>
+                            <span class="clip-label">Observer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pair-item">
+                    <span class="pair-title">Multi-Observer</span>
+                    <div class="pair-row sync-group">
+                        <div class="clip" style="--ar:1.818">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/synth_town02_actor.mp4"></video>
+                            <span class="clip-label">Actor</span>
+                        </div>
+                        <div class="clip-pair">
+                            <div class="clip" style="--ar:2">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/synth_town02_observer1.mp4"></video>
+                            <span class="clip-label">Observer 1</span>
+                        </div>
+                            <div class="clip" style="--ar:2">
+                            <video loop muted playsinline preload="none" class="lazy-video" data-src="video/data/synth_town02_observer2.mp4"></video>
+                            <span class="clip-label">Observer 2</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Model Overview -->
+    <section id="model-overview" class="section">
+        <div class="container">
+            <h2 class="section-title">Model Overview</h2>
+            <p>
+                A single video DiT <strong>jointly generates the actor and panoramic observer streams</strong> in one
+                token sequence, so objects that leave the actor's view keep evolving in the observer.
+            </p>
+            <div class="figure-container">
+                <img src="assets/wo_main_architecture.jpg" alt="World Observer architecture and Observer Sink">
+            </div>
+            <div class="text-figure-row">
+                <div class="text-figure-text">
+                <ul class="model-points">
+                    <li><strong>Joint actor-observer modeling</strong>: objects leaving the actor&rsquo;s view keep evolving
+                        in the observer, and both streams share this world state. Separate prompts let the observer act
+                        as both memory and control.</li>
+                    <li><strong>Panoramic warping &amp; flexible resolution</strong>: warping both streams from a shared panorama
+                        fixes each stream&rsquo;s camera condition and aligns actor and observer geometry. Since the observer only
+                        maintains the world state rather than being displayed, it is generated at a flexible resolution.</li>
+                    <li><strong>Observer Sink</strong>: high-resolution perspective views of the surroundings, cropped from
+                        the panorama, restore fine appearance when a region re-enters the actor view.</li>
+                </ul>
+                </div>
+                <div class="text-figure-img">
+                    <div class="figure-container">
+                        <img src="assets/wo_attn_map.jpg" alt="Self-attention visualization of a re-entering object">
+                        <span class="figure-caption">A query on a re-entering object attends to the observer region
+                            holding its out-of-view state; the non-joint baseline loses the object.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Comparison -->
+    <section id="comparison" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Comparison with World Models</h2>
+            <p>
+                An object leaves the actor's view and comes back. Existing models often fall into a <strong>frame-locked,
+                lost, frozen, or impostor state</strong>, while World Observer <strong>preserves its identity and state evolution</strong>
+                across the out-of-view interval.
+            </p>
+            <div class="cmp-tabs" role="tablist">
+                <button class="cmp-tab active" type="button" data-domain="real">Real</button><button class="cmp-tab" type="button" data-domain="synth">Synthetic</button>
+                <div class="cmp-dots" id="cmp-dots" aria-label="Scenes"></div>
+            </div>
+            <div class="cmp-panels" id="cmp-panels">
+                <div class="cmp-panel" data-domain="real" id="cmp-real_traveler">
+                    <p class="cmp-caption">&ldquo;A person pulling two suitcases walks across the lobby, exits the view, keeps moving naturally, and re-enters.&rdquo;</p>
+                    <div class="cmp-top cols-2">
+                            <div class="clip" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/GT.mp4"></video>
+                                <span class="clip-label">Ground Truth</span>
+                            </div><div class="clip is-ours" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/Ours_single.mp4"></video>
+                                <span class="clip-label">Ours (Single)</span>
+                            </div>
+                    </div>
+                    <div class="cmp-grid">
+                            <div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/DreamX-World.mp4"></video>
+                                <span class="clip-label">DreamX-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/Fantasy-World.mp4"></video>
+                                <span class="clip-label">FantasyWorld</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/HY-World1.5.mp4"></video>
+                                <span class="clip-label">HY-World 1.5</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/HyDRA.mp4"></video>
+                                <span class="clip-label">HyDRA</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/LingBot-World.mp4"></video>
+                                <span class="clip-label">LingBot-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/Matrix-Game-3.mp4"></video>
+                                <span class="clip-label">Matrix-Game 3</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/OmniRoam.mp4"></video>
+                                <span class="clip-label">OmniRoam</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_traveler/PanoWorld.mp4"></video>
+                                <span class="clip-label">PanoWorld</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="cmp-panel" data-domain="real" id="cmp-real_truck">
+                    <p class="cmp-caption">&ldquo;A white armored truck driving straight ahead exits the view, keeps moving naturally, and re-enters.&rdquo;</p>
+                    <div class="cmp-top cols-2">
+                            <div class="clip" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/GT.mp4"></video>
+                                <span class="clip-label">Ground Truth</span>
+                            </div><div class="clip is-ours" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/Ours_single.mp4"></video>
+                                <span class="clip-label">Ours (Single)</span>
+                            </div>
+                    </div>
+                    <div class="cmp-grid">
+                            <div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/DreamX-World.mp4"></video>
+                                <span class="clip-label">DreamX-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/Fantasy-World.mp4"></video>
+                                <span class="clip-label">FantasyWorld</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/HY-World1.5.mp4"></video>
+                                <span class="clip-label">HY-World 1.5</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/HyDRA.mp4"></video>
+                                <span class="clip-label">HyDRA</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/LingBot-World.mp4"></video>
+                                <span class="clip-label">LingBot-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/Matrix-Game-3.mp4"></video>
+                                <span class="clip-label">Matrix-Game 3</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/OmniRoam.mp4"></video>
+                                <span class="clip-label">OmniRoam</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/real_truck/PanoWorld.mp4"></video>
+                                <span class="clip-label">PanoWorld</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="cmp-panel" data-domain="synth" id="cmp-synth_pedestrian">
+                    <p class="cmp-caption">&ldquo;A pedestrian walking straight ahead moves out of the view, keeps walking naturally, and re-enters.&rdquo;</p>
+                    <div class="cmp-top cols-3">
+                            <div class="clip" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/GT.mp4"></video>
+                                <span class="clip-label">Ground Truth</span>
+                            </div><div class="clip is-ours" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/Ours_single.mp4"></video>
+                                <span class="clip-label">Ours (Single)</span>
+                            </div><div class="clip is-ours" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/Ours_multi.mp4"></video>
+                                <span class="clip-label">Ours (Multi)</span>
+                            </div>
+                    </div>
+                    <div class="cmp-grid">
+                            <div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/DreamX-World.mp4"></video>
+                                <span class="clip-label">DreamX-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/Fantasy-World.mp4"></video>
+                                <span class="clip-label">FantasyWorld</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/HY-World1.5.mp4"></video>
+                                <span class="clip-label">HY-World 1.5</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/HyDRA.mp4"></video>
+                                <span class="clip-label">HyDRA</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/LingBot-World.mp4"></video>
+                                <span class="clip-label">LingBot-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/Matrix-Game-3.mp4"></video>
+                                <span class="clip-label">Matrix-Game 3</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/OmniRoam.mp4"></video>
+                                <span class="clip-label">OmniRoam</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_pedestrian/PanoWorld.mp4"></video>
+                                <span class="clip-label">PanoWorld</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="cmp-panel" data-domain="synth" id="cmp-synth_bus">
+                    <p class="cmp-caption">&ldquo;A dark blue shuttle bus driving straight moves out of the view, keeps moving naturally, and re-enters.&rdquo;</p>
+                    <div class="cmp-top cols-3">
+                            <div class="clip" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/GT.mp4"></video>
+                                <span class="clip-label">Ground Truth</span>
+                            </div><div class="clip is-ours" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/Ours_single.mp4"></video>
+                                <span class="clip-label">Ours (Single)</span>
+                            </div><div class="clip is-ours" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/Ours_multi.mp4"></video>
+                                <span class="clip-label">Ours (Multi)</span>
+                            </div>
+                    </div>
+                    <div class="cmp-grid">
+                            <div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/DreamX-World.mp4"></video>
+                                <span class="clip-label">DreamX-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/Fantasy-World.mp4"></video>
+                                <span class="clip-label">FantasyWorld</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/HY-World1.5.mp4"></video>
+                                <span class="clip-label">HY-World 1.5</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/HyDRA.mp4"></video>
+                                <span class="clip-label">HyDRA</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/LingBot-World.mp4"></video>
+                                <span class="clip-label">LingBot-World</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/Matrix-Game-3.mp4"></video>
+                                <span class="clip-label">Matrix-Game 3</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/OmniRoam.mp4"></video>
+                                <span class="clip-label">OmniRoam</span>
+                            </div><div class="clip contain" style="--ar:1.818">
+                                <video muted playsinline preload="none" class="cmp-video" data-src="video/cmp/synth_bus/PanoWorld.mp4"></video>
+                                <span class="clip-label">PanoWorld</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ablation -->
+    <section id="ablation" class="section">
+        <div class="container">
+            <h2 class="section-title">Ablation Study</h2>
+            <h3 class="subsection-title" style="margin-top:1rem">Components</h3>
+            <div class="abl-grid cols-4 sync-group">
+                <figure class="abl-card is-ours">
+                    <div class="abl-head"><span class="abl-tag ours">Ours</span><b>Full model</b></div>
+                    <div class="abl-streams">
+                            <div class="clip" style="--ar:1.818">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/ours_perspective.mp4"></video>
+                                <span class="clip-label">Actor</span>
+                            </div>
+                            <div class="clip" style="--ar:2">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/ours_panorama.mp4"></video>
+                                <span class="clip-label">Observer</span>
+                            </div>
+                    </div>
+                    <figcaption>Out-of-view objects keep their motion and re-enter with their appearance intact.</figcaption>
+                </figure>
+                <figure class="abl-card">
+                    <div class="abl-head"><span class="abl-tag">w/o</span><b>Observer Sink</b></div>
+                    <div class="abl-streams">
+                            <div class="clip" style="--ar:1.818">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/no_sink_perspective.mp4"></video>
+                                <span class="clip-label">Actor</span>
+                            </div>
+                            <div class="clip" style="--ar:2">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/no_sink_panorama.mp4"></video>
+                                <span class="clip-label">Observer</span>
+                            </div>
+                    </div>
+                    <figcaption>Dynamics survive, but fine appearance degrades under large viewpoint changes.</figcaption>
+                </figure>
+                <figure class="abl-card">
+                    <div class="abl-head"><span class="abl-tag">w/o</span><b>Observer</b></div>
+                    <div class="abl-streams">
+                            <div class="clip" style="--ar:1.818">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/wo_Observer_perspective.mp4"></video>
+                                <span class="clip-label">Actor</span>
+                            </div>
+                            <div class="clip-empty" style="--ar:2">No observer</div>
+                    </div>
+                    <figcaption>Generated from the actor alone, out-of-view dynamics are not maintained.</figcaption>
+                </figure>
+                <figure class="abl-card">
+                    <div class="abl-head"><span class="abl-tag">w/o</span><b>Actor</b></div>
+                    <div class="abl-streams">
+                            <div class="clip" style="--ar:1.818">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/wo_Actor_perspective_crop.mp4"></video>
+                                <span class="clip-label">Actor (crop of panorama)</span>
+                            </div>
+                            <div class="clip" style="--ar:2">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/abl/wo_Actor_panorama.mp4"></video>
+                                <span class="clip-label">Observer</span>
+                            </div>
+                    </div>
+                    <figcaption>Generating only the panorama keeps out-of-view content, but the distorted panorama loses visual fidelity.</figcaption>
+                </figure>
+            </div>
+            <h3 class="subsection-title">Prompt Placement</h3>
+            <p>Decoupling the observer gives it its own prompt, so text can <strong>drive events beyond the actor&rsquo;s view</strong>.</p>
+            <div class="prompt-box">
+                <span class="prompt-label">Prompt</span>
+                <p class="prompt-text">&ldquo;Santa Claus <strong>walks in from the hallway, crosses the room</strong>, and sits down in an armchair.&rdquo;</p>
+            </div>
+            <div class="abl-grid cols-2 sync-group">
+                <figure class="abl-card">
+                    <div class="abl-head"><span class="abl-tag">alt</span><b>Prompting Actor</b></div>
+                    <div class="abl-streams">
+                            <div class="clip" style="--ar:1.818">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/pabl/only_actor.mp4"></video>
+                                <span class="clip-label">Actor</span>
+                            </div>
+                            <div class="clip" style="--ar:2">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/pabl/only_actor_pano.mp4"></video>
+                                <span class="clip-label">Observer</span>
+                            </div>
+                    </div>
+                    <figcaption>With the prompt only on the actor, text control is hallucinated inside the actor view.</figcaption>
+                </figure>
+                <figure class="abl-card is-ours">
+                    <div class="abl-head"><span class="abl-tag ours">Ours</span><b>Prompting Decoupled Observer</b></div>
+                    <div class="abl-streams">
+                            <div class="clip" style="--ar:1.818">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/pabl/ours_decoupled.mp4"></video>
+                                <span class="clip-label">Actor</span>
+                            </div>
+                            <div class="clip" style="--ar:2">
+                                <video loop muted playsinline preload="none" class="lazy-video" data-src="video/pabl/ours_decoupled_pano.mp4"></video>
+                                <span class="clip-label">Observer</span>
+                            </div>
+                    </div>
+                    <figcaption>A separate observer prompt enables control over the entire scene the observer sees.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract -->
+    <section id="abstract" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Abstract</h2>
+            <div class="abstract-text">
+                <p>
+                    How can a world model continuously observe regions beyond the actor&rsquo;s current view? Video world
+                    models simulate how an environment evolves from an agent&rsquo;s actions, yet remain actor-centric. Once
+                    an object leaves the actor&rsquo;s view, they lose direct evidence of its evolution, often failing to
+                    preserve its state and dynamics upon re-entry. To address this, we introduce
+                    <strong>World Observer</strong>, which decouples observing from acting by jointly generating a
+                    perspective <em>actor</em> for the agent-centric view with one or more panoramic <em>observers</em>
+                    that watch selected world regions. This allows objects that leave the actor&rsquo;s view to remain
+                    visually evolving in an observer, so their updated states are reflected when they re-enter. We ground
+                    the actor and observers by warping from a shared panoramic source for explicit geometric
+                    correspondence, and introduce an <em>Observer Sink</em> of high-resolution perspective references to
+                    restore fine appearance upon re-entry. Since the observers are decoupled from the actor, they can be
+                    placed freely across the scene, extended to multiple locations for broader coverage, and driven by
+                    control signals to steer out-of-view evolution. To evaluate out-of-view evolution, we further
+                    introduce world-space metrics and a benchmark spanning real and synthetic scenes. World Observer
+                    substantially improves out-of-view dynamics while remaining competitive in visual fidelity, camera
+                    control, and 3D adherence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="citation-section">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 1.5rem; border: none; margin-bottom: 1rem;">Citation</h2>
+            <div class="citation-block group">
+                <button onclick="copyBibtex()" class="citation-copy-btn">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+                <div id="bibtex-text" style="display: none;">@article{choi2026worldobserver,
+  title={{World Observer: Joint Actor-Observer Generation for Persistent World Modeling}},
+  author={Choi, Hyunwook and Chung, Dahyun and Kim, Hyunsung and Jin, Siyoon and Choi, Jinhyeok and Seo, Junyoung and Kim, Seungryong},
+  journal={arXiv preprint},
+  year={2026}
+}</div>
+                <pre class="citation-code"><code id="bibtex-code">@article{choi2026worldobserver,
+  title={{World Observer: Joint Actor-Observer Generation for Persistent World Modeling}},
+  author={Choi, Hyunwook and Chung, Dahyun and Kim, Hyunsung and Jin, Siyoon and Choi, Jinhyeok and Seo, Junyoung and Kim, Seungryong},
+  journal={arXiv preprint},
+  year={2026}
+}</code></pre>
             </div>
         </div>
     </section>
@@ -166,11 +779,163 @@
             videos.forEach(video => observer.observe(video));
         }
 
+        // Hero reel player (Atlas-style: click to pause, hover bar with seek)
+        function initReel() {
+            const v = document.getElementById('reel-video');
+            if (!v) return;
+            const play = document.getElementById('reel-play'), ico = document.getElementById('reel-ico');
+            const seek = document.getElementById('reel-seek'), fill = document.getElementById('reel-fill');
+            const time = document.getElementById('reel-time');
+            const PAUSE = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+            const PLAY = '<path d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5z"/>';
+            const fmt = t => { t = Math.max(0, t | 0); return (t / 60 | 0) + ':' + ('0' + t % 60).slice(-2); };
+            const sync = () => { const on = !v.paused; ico.innerHTML = on ? PAUSE : PLAY; play.setAttribute('aria-label', on ? 'Pause' : 'Play'); };
+            const toggle = () => { if (v.paused) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause(); };
+            v.addEventListener('click', toggle);
+            play.addEventListener('click', toggle);
+            v.addEventListener('play', sync);
+            v.addEventListener('pause', sync);
+            v.addEventListener('timeupdate', () => {
+                if (!v.duration) return;
+                const pct = 100 * v.currentTime / v.duration;
+                fill.style.width = pct + '%';
+                seek.setAttribute('aria-valuenow', Math.round(pct));
+                time.textContent = fmt(v.currentTime) + ' / ' + fmt(v.duration);
+            });
+            let seekTo = t => { v.currentTime = t; };
+            const to = e => { const r = seek.getBoundingClientRect(); const x = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)); if (v.duration) seekTo(x * v.duration); };
+            let drag = false;
+            seek.addEventListener('pointerdown', e => { drag = true; seek.setPointerCapture(e.pointerId); to(e); });
+            seek.addEventListener('pointermove', e => { if (drag) to(e); });
+            seek.addEventListener('pointerup', () => { drag = false; });
+            seek.addEventListener('keydown', e => {
+                if (!v.duration) return;
+                if (e.key === 'ArrowRight') { seekTo(Math.min(v.duration, v.currentTime + 5)); e.preventDefault(); }
+                if (e.key === 'ArrowLeft') { seekTo(Math.max(0, v.currentTime - 5)); e.preventDefault(); }
+                if (e.key === ' ' || e.key === 'Enter') { toggle(); e.preventDefault(); }
+            });
+            // Hosts without HTTP Range support make the video unseekable: prefetch it as a blob in the
+            // background and switch to it only when the viewer seeks, so playback is never interrupted
+            let blobUrl = null, blobReq = null, swapping = false, pendingT = 0;
+            const seekable = () => { const r = v.seekable; return r.length && r.end(r.length - 1) >= v.duration - 1; };
+            const prefetch = () => {
+                if (blobReq || !isFinite(v.duration) || seekable()) return blobReq;
+                blobReq = fetch(v.currentSrc).then(res => res.blob()).then(b => (blobUrl = URL.createObjectURL(b))).catch(() => null);
+                return blobReq;
+            };
+            seekTo = t => {
+                if (!v.duration) return;
+                if (seekable() || v.src === blobUrl) { v.currentTime = t; return; }
+                const p = prefetch();
+                if (!p) { v.currentTime = t; return; }
+                pendingT = t;
+                if (swapping) return;
+                swapping = true;
+                p.then(url => {
+                    if (!url) { swapping = false; return; }
+                    const on = !v.paused;
+                    v.addEventListener('loadedmetadata', () => {
+                        v.currentTime = pendingT;
+                        if (on) { const q = v.play(); if (q) q.catch(() => {}); }
+                    }, { once: true });
+                    v.src = url;
+                });
+            };
+            v.addEventListener('loadedmetadata', prefetch, { once: true });
+            if (v.readyState >= 1) prefetch();
+            sync();
+        }
+
+        // Keep the streams of one training example in step
+        function initSyncGroups() {
+            document.querySelectorAll('.sync-group').forEach(group => {
+                const vids = Array.from(group.querySelectorAll('video'));
+                let ready = 0;
+                vids.forEach(v => v.addEventListener('loadeddata', () => {
+                    if (++ready < vids.length) return;
+                    vids.forEach(x => { x.currentTime = 0; const p = x.play(); if (p) p.catch(() => {}); });
+                }, { once: true }));
+                vids[0].addEventListener('seeked', () => {
+                    if (vids[0].currentTime < 0.1) vids.slice(1).forEach(x => { x.currentTime = 0; });
+                });
+            });
+        }
+
+        // Comparison: Real / Synthetic tabs; scenes inside the active tab advance automatically (1 -> 2 -> 1 -> ...)
+        function initComparison() {
+            const section = document.getElementById('comparison');
+            if (!section) return;
+            const FALLBACK_MS = 5400;           // clips are 5.13 s; advance even if 'ended' never fires
+            const panels = Array.from(section.querySelectorAll('.cmp-panel'));
+            const tabs = Array.from(section.querySelectorAll('.cmp-tab'));
+            const dotsBox = document.getElementById('cmp-dots');
+            let domain = 'real', idx = 0, visible = false, timer = null;
+            const scenes = () => panels.filter(p => p.dataset.domain === domain);
+            const vids = p => Array.from(p.querySelectorAll('video'));
+            const load = v => { if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; v.load(); } };
+            const current = () => scenes()[idx];
+
+            function schedule() {
+                clearTimeout(timer);
+                if (!visible) return;
+                const m = current().querySelector('video');
+                const left = m && isFinite(m.duration) && m.duration > 0
+                    ? (m.duration - m.currentTime) * 1000 + 150 : FALLBACK_MS;
+                timer = setTimeout(() => show(idx + 1), Math.max(500, left));
+            }
+            function start(p) {
+                vids(p).forEach(v => { load(v); try { v.currentTime = 0; } catch (e) {} const r = v.play(); if (r) r.catch(() => {}); });
+                schedule();
+            }
+            function renderDots() {
+                dotsBox.innerHTML = '';
+                scenes().forEach((_, i) => {
+                    const d = document.createElement('button');
+                    d.type = 'button';
+                    d.className = 'cmp-dot' + (i === idx ? ' active' : '');
+                    d.setAttribute('aria-label', 'Scene ' + (i + 1));
+                    d.addEventListener('click', () => show(i));
+                    dotsBox.appendChild(d);
+                });
+            }
+            function show(i) {
+                const list = scenes();
+                idx = (i + list.length) % list.length;
+                panels.forEach(p => {
+                    const on = p === list[idx];
+                    p.classList.toggle('active', on);
+                    if (!on) vids(p).forEach(v => v.pause());
+                });
+                renderDots();
+                if (visible) start(list[idx]); else clearTimeout(timer);
+                vids(list[(idx + 1) % list.length]).forEach(v => { v.preload = 'auto'; load(v); });
+            }
+            panels.forEach(p => {
+                const m = p.querySelector('video');
+                m.addEventListener('loadedmetadata', () => { if (p === current()) schedule(); });
+                m.addEventListener('ended', () => { if (p === current()) show(idx + 1); });
+            });
+            tabs.forEach(t => t.addEventListener('click', () => {
+                domain = t.dataset.domain;
+                tabs.forEach(x => x.classList.toggle('active', x === t));
+                show(0);
+            }));
+            new IntersectionObserver(entries => entries.forEach(e => {
+                visible = e.isIntersecting;
+                if (visible) start(current());
+                else { clearTimeout(timer); vids(current()).forEach(v => v.pause()); }
+            }), { threshold: 0.1 }).observe(section);
+            show(0);
+        }
+
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             initScrollSpy();
             initFadeInAnimations();
             initLazyVideos();
+            initReel();
+            initSyncGroups();
+            initComparison();
 
             const heroVideo = document.querySelector('video.hero-video');
             if (heroVideo) {
