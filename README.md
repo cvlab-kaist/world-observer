@@ -17,8 +17,8 @@
 <br>
 
 <p align="center">
-  <a href="https://cvlab-kaist.github.io/world-observer/" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/website.svg" alt="Project website"></a>&nbsp;
-  <!-- <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/paper.svg" alt="Paper"></a>&nbsp; -->
+  <a href="https://cvlab-kaist.github.io/world-observer/" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/wo_website.svg" alt="Project website"></a>&nbsp;
+  <!-- <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/wo_paper.svg" alt="Paper"></a>&nbsp; -->
 </p>
 
 <br>
