@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://cvlab-kaist.github.io/world-observer/" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/wo_website.svg" alt="Project website"></a>&nbsp;
-  <!-- <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/wo_paper.svg" alt="Paper"></a>&nbsp; -->
+  <a href="https://arxiv.org/abs/2610.02162" target="_blank" rel="noopener noreferrer" style="display: inline-block;"><img src="assets/shields/wo_paper.svg" alt="Paper"></a>&nbsp;
 </p>
 
 <br>
@@ -37,7 +37,7 @@ We are currently undergoing internal review and code cleanup, and plan to releas
 @article{choi2026worldobserver,
   title={{World Observer: Joint Actor-Observer Generation for Persistent World Modeling}},
   author={Choi, Hyunwook and Chung, Dahyun and Kim, Hyunsung and Jin, Siyoon and Choi, Jinhyeok and Seo, Junyoung and Kim, Seungryong},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2610.02162},
   year={2026}
 }
 ```
