@@ -34,10 +34,13 @@ We are currently undergoing internal review and code cleanup, and plan to releas
 ## Citation
 
 ```bibtex
-@article{choi2026worldobserver,
-  title={{World Observer: Joint Actor-Observer Generation for Persistent World Modeling}},
-  author={Choi, Hyunwook and Chung, Dahyun and Kim, Hyunsung and Jin, Siyoon and Choi, Jinhyeok and Seo, Junyoung and Kim, Seungryong},
-  journal={arXiv preprint arXiv:2610.02162},
-  year={2026}
+@misc{choi2026worldobserverjointactorobserver,
+  title={World Observer: Joint Actor-Observer Generation for Persistent World Modeling},
+  author={Hyunwook Choi and Dahyun Chung and Hyunsung Kim and Siyoon Jin and Jinhyeok Choi and Junyoung Seo and Seungryong Kim},
+  year={2026},
+  eprint={2610.02162},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.02162},
 }
 ```
